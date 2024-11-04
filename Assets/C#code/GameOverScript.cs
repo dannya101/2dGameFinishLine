@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; 
 
+//this is the class that manages our game over screen to allow us to start, restart, and pause gameplay
 public class GameOver : MonoBehaviour
 {
     
