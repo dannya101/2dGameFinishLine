@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEditor;
-using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 
 public class Ghostscript : MonoBehaviour
