@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     private Rigidbody2D rb;
     public float moveSpeed;
     public float jumpSpeed;
@@ -23,14 +22,20 @@ public class PlayerMovement : MonoBehaviour
     private bool isDead = false;
     public Animator anim;
     AudioSource jumpsound;
+    
     // Start is called before the first frame update
+    //initialize the the rigidbody of the character 
+    //also intialize the jumpsound audio
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         jumpsound = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    // initialize the inputs of how to move the charcter left and right
+    //also intitialize the jumping of the character by setting the y vector to move with inputs with the movement speed
+    //also initiazlize animation of speed to satisfy the condition that the speed has to be greater than a certain value of rb.velocity.x to run the animation
+    //this makes it so the animation only executes when the character moves
     void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
