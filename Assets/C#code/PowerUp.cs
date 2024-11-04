@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this is the class that controls the coin in the game
+//where it disappears and plays the sound once interacted with
 public class PowerUp : MonoBehaviour
 {
     AudioSource coin;
