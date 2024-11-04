@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class ActivateBird : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // private bool isActive = false;
     public GameObject bird;
     public GameObject wall;
     public float speed;
     public GameOver end;
+
+    //update function to have bird move across the screen right to left
+    //bird is directed to fly to the wall gameobject which is on the far left of the screen
     void Update(){
-        // isActive = true;
         bird.transform.position = Vector2.MoveTowards(bird.transform.position, wall.transform.position, speed);
     } 
-    // Update is called once per frame
+    
+    //collision function to show once Gameobject Bird collides with another object with a player tag
+    //a game over screen is shown to show game is now over
     public void OnCollisionEnter2D( Collision2D coll ) {
        GameObject collidedWith = coll.gameObject;
         if ( collidedWith.CompareTag("Player") ) {
             end.gameOver();
         }     
-        
     }
 }
