@@ -5,6 +5,7 @@ using System.Numerics;
 using UnityEngine;
 
 //this is the class which controls our main characters movement or our blue gummy character
+//also keeping track of which direction the player is going, when it is jumping in air, and if the player has fallen out of the game
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
