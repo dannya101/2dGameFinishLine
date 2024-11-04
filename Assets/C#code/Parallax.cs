@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class is used to control the parallax function of the backdrop of our game
+//have a dynamic moving background as we move our character
 public class Parallax : MonoBehaviour
 {
     private float startPos;
