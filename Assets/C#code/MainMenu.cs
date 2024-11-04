@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // function used for the play button to start the game
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
+    //function used to exit the game
     public void ExitGame()
     {
         Application.Quit();
