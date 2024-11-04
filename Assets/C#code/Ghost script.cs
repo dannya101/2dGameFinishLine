@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Ghostscript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
@@ -14,6 +13,8 @@ public class Ghostscript : MonoBehaviour
     private Transform currentSpot;
     public float speed;
     public GameOver end;
+
+    //start function is called at the beginning and is used to declare the rigidbody compoenet and the current spot of gameObject pointB
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +22,8 @@ public class Ghostscript : MonoBehaviour
     }
 
     // Update is called once per frame
+    //in this update function we calculate the distance from the current spot of the gameobject to the ghost object
+    //
     void Update()
     {
         UnityEngine.Vector2 point = currentSpot.position - transform.position;
