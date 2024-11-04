@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    // Start is called before the first frame update
     private float startPos;
     private float length;
     public GameObject cam;
-
     public float parallaxEf;
+
+    //start function declares where the start position relative to the background
+    //set length to size of background
     void Start()
     {
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
+    // function to be able to move the backgrounds while moving the character
+    //once a certain distance has been reached for the background it will update its new start position 
     void FixedUpdate()
     {
         float dist = cam.transform.position.x * parallaxEf;
