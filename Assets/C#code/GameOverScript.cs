@@ -5,28 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     public GameObject gameOverUI;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //gameOver function is called to pause the flow of game and show canvas of Gameover screen
     public void gameOver()
     {
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
     }
+
+    //restart function is called to reload the SampleScene and resume game
     public void restart(){
-        
         SceneManager.LoadScene( "SampleScene" );
         Time.timeScale = 1f;
     }
+    //Home function is used to go to the Home screen or Main Menu Screen
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
