@@ -23,7 +23,9 @@ public class Ghostscript : MonoBehaviour
 
     // Update is called once per frame
     //in this update function we calculate the distance from the current spot of the gameobject to the ghost object
-    //
+    //first checks which direction it will walk towards seeing what the current spot is
+    //the last two conditions check to see how close the gameobject is from the current spot and if it satisfies the condition of distance
+    //and the current spot it will flip the x direction to walk to the other point
     void Update()
     {
         UnityEngine.Vector2 point = currentSpot.position - transform.position;
@@ -45,14 +47,15 @@ public class Ghostscript : MonoBehaviour
             flip();
             currentSpot = pointA.transform;   
         }
-        
     }
+    //function to flip the ghost character to walk in the opposite direction
     private void flip()
     {
         UnityEngine.Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+    //collision function to show once the gameObject of Ghost character collides with an object with a player tag game is over
      public void OnCollisionEnter2D( Collision2D coll ) {
        GameObject collidedWith = coll.gameObject;
         if ( collidedWith.CompareTag("Player") ) {
