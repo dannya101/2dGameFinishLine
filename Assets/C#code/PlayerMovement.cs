@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 
+//this is the class which controls our main characters movement or our blue gummy character
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
@@ -42,6 +43,14 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new UnityEngine.Vector2(moveInput * moveSpeed, rb.velocity.y);
         anim.SetFloat("Speed", rb.velocity.x);
     }
+
+    //update function that would run oce per frame calling the ifFell function to see if the player has died
+    //checking if the player was jumping or not 
+    //We first use our first condition by checking if the gameObject is on the Ground in game if it is then execute commands to show player is in air
+    //while we are checking if the payer is air we also activate the animation function to jump and the jump sound to all occur when player is jumping
+    //we then check how long the player is in air to determine how long we want our character to e in air and if the player is still in air
+    //if the character is in air we turn off the jump animation and set values to show we are not in air anymore
+    //In our last condition we make sure that the up arrow key is not pressed down anymore to allow us to jump again in the future saying we are not in air anymore
     void Update()
     {
         ifFell();
@@ -71,11 +80,13 @@ public class PlayerMovement : MonoBehaviour
             inAir = false;
         }
    }
-    public void ifFell()
-    {
-        if ( transform.position.y < bottomY && !isDead) {
-            isDead = true;
-            end.gameOver();
-        } 
+
+   //this function is to allow us to check if the player has fallen through the threshold y value to see if the player has not "died" yet
+   public void ifFell()
+   {
+       if ( transform.position.y < bottomY && !isDead) {
+       isDead = true;
+       end.gameOver();
+       } 
     }
 }
