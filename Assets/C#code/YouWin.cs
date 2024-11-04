@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//class to control the winning screen and the finishing flag at the end
 public class YouWin : MonoBehaviour
 {
     //function to load the main menu screen
