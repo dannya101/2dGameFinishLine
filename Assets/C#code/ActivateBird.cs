@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+//this class is used to "Activate the Bird" allowing us to code the mechanics of the bird to go across our game
 public class ActivateBird : MonoBehaviour
 {
     public GameObject bird;
