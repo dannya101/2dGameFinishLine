@@ -4,6 +4,8 @@ using System.Numerics;
 using UnityEditor;
 using UnityEngine;
 
+//this class is used to control the Ghost character in our game where it comes to guarding their territory, moving left and right, and
+//their ability to end the game for the player
 public class Ghostscript : MonoBehaviour
 {
     public GameObject pointA;
