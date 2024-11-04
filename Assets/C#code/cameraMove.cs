@@ -5,6 +5,9 @@ using System.Numerics;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
+
+//this is the class which controls the movement of the camera in our game
+//goal is to keep up with the camera moving right every second while also trying to stay alive 
 public class cameraMove : MonoBehaviour
 {
     public float speed = 2.0f;
