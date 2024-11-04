@@ -11,12 +11,7 @@ public class PowerUp : MonoBehaviour
     {
         coin = GetComponent<AudioSource>(); 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void OnCollisionEnter2D( Collision2D coll ) {
        GameObject collidedWith = coll.gameObject;
         if ( collidedWith.CompareTag("Player") ) {
